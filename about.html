@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="trust.png" type="">
+
+  <title> TaskMedia</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    .usaid {
+            font-family: 'Bebas Neue', sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: white;
+            color: #333;
+        }
+
+        #content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        form {
+            max-width: 400px;
+            margin-right: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        canvas {
+            max-width: 400px;
+            max-height: 400px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        #result {
+            max-width: 400px;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        #userData {
+            max-width: 400px;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        /* Google Translate Button Styles */
+        .goog-te-menu-value {
+            padding: 5px !important;
+        }
+
+        .goog-te-gadget-icon {
+            display: none;
+        }
+
+        .goog-te-combo {
+            padding: 3px !important;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .goog-te-combo-arrow {
+            margin-top: 3px !important;
+        }
+  </style>
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3"></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,es,fr,de,it,ja,ko,zh-CN,ru,ar,hi', autoDisplay: false }, 'google_translate_element');
+        }
+    </script>
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid ">
+          <div class="contact_nav">
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : +91 0069 0068 00
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email : abc@gmail.com
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                Location
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                TaskMedia
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="index.html"> Home </a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="products.html"> Products </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html">Services</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="about.html"> Free Check<span class="sr-only">(current)</span> </a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html"> <i class="fa fa-user" aria-hidden="true"></i> Login</a>
+                </li>
+                <!-- <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form> -->
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About <span>Us</span>
+              </h2>
+            </div>
+            <p>
+              We are passionate innovators committed to transforming the world of agriculture. With a focus on sustainability and technology, we strive to empower farmers with cutting-edge solutions that redefine farming practices. Our mission is to create a future where precision meets simplicity, fostering optimal growth and prosperity in every field.
+            </p>
+            <!-- <a href="">
+              Read More
+            </a> -->
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="farm.jpg" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="usaid">
+    <div id="content">
+      <form id="soilDataForm">
+          <label for="landSize">Land Size (acres): </label>
+          <input type="number" id="landSize" min="0" required>
+
+          <label for="location">Location: </label>
+          <select id="location" required>
+              <option value="" disabled selected>Select Location</option>
+              <!-- States -->
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+
+              <!-- Union Territories -->
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Puducherry">Puducherry</option>
+
+              <!-- Add more locations as needed -->
+          </select>
+
+          <label for="moisture">Soil Moisture (%): </label>
+          <input type="number" id="moisture" min="0" max="100" required>
+
+          <label for="temperature">Temperature (°C): </label>
+          <input type="number" id="temperature" min="-10" max="100" required>
+
+          <label for="ph">pH: </label>
+          <input type="number" step="0.1" id="ph" min="0" max="14" required>
+
+          <label for="nitrogen">N Composition: </label>
+          <input type="number" id="nitrogen" min="0" required>
+
+          <label for="phosphorus">P Composition: </label>
+          <input type="number" id="phosphorus" min="0" required>
+
+          <label for="potassium">K Composition: </label>
+          <input type="number" id="potassium" min="0" required>
+
+          <button type="submit">Generate Graph</button>
+      </form>
+
+      <div>
+          <!-- Google Translate Button -->
+          <div id="google_translate_element"></div>
+
+          <canvas id="myChart" width="400" height="400"></canvas>
+          <div id="userData"></div>
+          <div id="result"></div>
+      </div>
+  </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var form = document.getElementById('soilDataForm');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var landSize = parseFloat(document.getElementById('landSize').value);
+            var location = document.getElementById('location').value;
+            var moisture = parseFloat(document.getElementById('moisture').value);
+            var temperature = parseFloat(document.getElementById('temperature').value);
+            var ph = parseFloat(document.getElementById('ph').value);
+            var nitrogen = parseFloat(document.getElementById('nitrogen').value);
+            var phosphorus = parseFloat(document.getElementById('phosphorus').value);
+            var potassium = parseFloat(document.getElementById('potassium').value);
+
+            generateGraph(landSize, location, moisture, temperature, ph, nitrogen, phosphorus, potassium);
+        });
+
+        function generateGraph(landSize, location, moisture, temperature, ph, nitrogen, phosphorus, potassium) {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Moisture', 'Temperature', 'pH', 'N', 'P', 'K'],
+                    datasets: [{
+                        label: 'Soil Data',
+                        data: [moisture, temperature, ph, nitrogen, phosphorus, potassium],
+                        backgroundColor: function(context) {
+                            var thresholds = [85, 35, 7.5, 49, 39, 20];
+                            var value = context.dataset.data[context.dataIndex];
+                            return (value <= thresholds[context.dataIndex]) ? '#C1F2B0' : 'red';
+                        },
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }],
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100 // You can adjust the maximum y-axis value
+                        }
+                    }
+                }
+            });
+
+            // Display user-entered data
+            var userDataDiv = document.getElementById('userData');
+            userDataDiv.innerHTML = `
+                <p>Location: ${location}</p>
+                <p>Land Size: ${landSize} acres</p>
+                <p>Soil Temperature: ${temperature} °C</p>
+            `;
+
+            // Display soil condition result
+            var resultDiv = document.getElementById('result');
+            var isMoistureGood = moisture >= 50;
+            var isTemperatureGood = temperature >= 15;
+            var isPhGood = ph >= 5.5;
+            var isNpkGood = nitrogen === 40 && phosphorus === 30 && potassium === 10;
+
+            var isSoilGood = isMoistureGood && isTemperatureGood && isPhGood && isNpkGood;
+
+            resultDiv.innerHTML = isSoilGood
+                ? `<span style="color: green;">Perfect soil!</span>`
+                : `<span style="color: red;">Poor soil condition.</span>`;
+        }
+    });
+</script>
+
+
+  <!-- end about section -->
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +91 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  abc@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              Elevate your gardening experience with our smart system—effortless care, real-time insights, and optimal conditions for flourishing plants.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="index.html">
+                <img src="images/nav-bullet.png" alt="">
+                Home
+              </a>
+              <a class="" href="about.html">
+                <img src="images/nav-bullet.png" alt="">
+                About
+              </a>
+              <a class="" href="service.html">
+                <img src="images/nav-bullet.png" alt="">
+                Services
+              </a>
+              <a class="" href="service.html">
+                <img src="images/nav-bullet.png" alt="">
+                Designed by Saalim
+              </a>
+
+              <!-- <a class="" href="contact.html">
+                <img src="images/nav-bullet.png" alt="">
+                Contact Us
+              </a> -->
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">TaskMedia</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>

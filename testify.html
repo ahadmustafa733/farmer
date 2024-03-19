@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Battle - Arquam v/s Yatharth</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            width: 150px; /* Set a fixed width for all attack buttons */
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button[disabled] {
+            cursor: not-allowed;
+        }
+
+        .player1 button {
+            background-color: #d9534f; /* Red color for Player 1 */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .player2 button {
+            background-color: #5bc0de; /* Blue color for Player 2 */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        .pokemon-icon {
+            max-width: 100px;
+            margin-top: 10px;
+        }
+
+        .attack-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .attack-buttons button {
+            margin-bottom: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .attack-buttons button[disabled] {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+
+        .attack-buttons button:hover:not([disabled]) {
+            background-color: #45a049;
+        }
+
+        .attack-buttons button:contains('The Greatest Yapper'),
+        .attack-buttons button:contains('Rizz') {
+            background-color: #FFD700; /* Yellow color */
+        }
+
+        .result-box {
+            background-color: #ffcccc;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-box p {
+            margin: 0;
+            font-size: 18px;
+            color: #d9534f; /* Red color for result text */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pokemon Battle - Arquam v/s Yatharth</h1>
+        
+        <div id="battleInfo">
+            <div class="pokemon-container player1">
+                <img class="pokemon-icon" src="muay-thai.png" alt="Arquam Pokemon Icon">
+                <button onclick="chooseAttack('player1')">Arquam: Attack</button>
+            </div>
+
+            <div class="pokemon-container player2">
+                <img class="pokemon-icon" src="villain.png" alt="Yatharth Pokemon Icon">
+                <button onclick="chooseAttack('player2')">Yatharth: Choose Attack</button>
+            </div>
+            
+            <div class="attack-buttons" id="player1AttackButtons"></div>
+            <div class="attack-buttons" id="player2AttackButtons"></div>
+        </div>
+
+        <div class="result-box" id="battleResult">
+            <!-- Battle result will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        var player1Pokemon = "Arquam"; // Replace with the selected Pokemon from player 1
+        var player2Pokemon = "Yatharth"; // Replace with the selected Pokemon from player 2
+        var player1HP = 200; // Initial HP for player 1
+        var player2HP = 200; // Initial HP for player 2
+
+        // Keep track of whose turn it is
+        var currentPlayer = 'player1';
+
+        function chooseAttack(player) {
+            // Check if it's the player's turn
+            if (player === currentPlayer) {
+                // Clear existing attack buttons for both players
+                clearAttackButtons('player1AttackButtons');
+                clearAttackButtons('player2AttackButtons');
+
+                // Display attack buttons
+                var attackButtons = createAttackButtons(player);
+                document.getElementById(player + 'AttackButtons').appendChild(attackButtons);
+
+                // Switch turn after choosing attack
+                switchTurn();
+            }
+        }
+
+        function clearAttackButtons(containerId) {
+            var existingButtons = document.getElementById(containerId);
+            while (existingButtons.firstChild) {
+                existingButtons.firstChild.remove();
+            }
+        }
+
+        function createAttackButtons(player) {
+            var container = document.createElement('div');
+            container.className = 'attack-buttons';
+
+            var attacks = [];
+
+            if (player === 'player1') {
+                // Arquam's attacks
+                attacks = ['Yapping', 'FIITG', 'Rizz', 'Zulfe'];
+            } else if (player === 'player2') {
+                // Yatharth's attacks
+                attacks = ['Yapping', 'The Greatest Yapper', 'VMC', 'Organic'];
+            }
+
+            for (var i = 0; i < attacks.length; i++) {
+                var button = document.createElement('button');
+                button.innerText = attacks[i];
+                button.onclick = function (event) {
+                    var selectedAttack = event.target.innerText;
+                    performAttack(player, selectedAttack);
+                };
+                container.appendChild(button);
+            }
+
+            return container;
+        }
+
+        function switchTurn() {
+            currentPlayer = (currentPlayer === 'player1') ? 'player2' : 'player1';
+        }
+
+        function performAttack(attacker, attack) {
+            // Adjust damage values based on the attack
+            var damage = 0;
+
+            if (attacker === 'player1') { // Arquam's attacks
+                switch (attack) {
+                    case 'Yapping':
+                        damage = 5;
+                        break;
+                    case 'FIITG':
+                        damage = 20;
+                        break;
+                    case 'Rizz':
+                        damage = 30;
+                        break;
+                    case 'Zulfe':
+                        damage = 40;
+                        // Also take 10 from itself
+                        player1HP -= 10;
+                        break;
+                }
+            } else if (attacker === 'player2') { // Yatharth's attacks
+                switch (attack) {
+                    case 'Yapping':
+                        damage = 5;
+                        break;
+                    case 'The Greatest Yapper':
+                        damage = 20;
+                        break;
+                    case 'VMC':
+                        damage = 30;
+                        break;
+                    case 'Organic':
+                        damage = 40;
+                        // Also take 10 from itself
+                        player2HP -= 10;
+                        break;
+                }
+            }
+
+            // Update HP based on the attack
+            if (attacker === 'player1') {
+                player2HP -= damage;
+            } else if (attacker === 'player2') {
+                player1HP -= damage;
+            }
+
+            // Display battle result
+            displayBattleResult();
+        }
+
+        function displayBattleResult() {
+            var resultText = "Battle Result:<br>";
+            resultText += "Arquam ( " + player1Pokemon + " ) HP: " + player1HP + "<br>";
+            resultText += "Yatharth ( " + player2Pokemon + " ) HP: " + player2HP + "<br>";
+
+            document.getElementById('battleResult').innerHTML = "<p>" + resultText + "</p>";
+
+            // Check for a winner
+            if (player1HP <= 0 || player2HP <= 0) {
+                endBattle();
+            }
+        }
+
+        function endBattle() {
+            // Determine the winner
+            var winner = (player1HP <= 0) ? 'Yatharth' : 'Arquam';
+            var resultBox = document.getElementById('battleResult');
+            resultBox.innerHTML = "<p class='winner-text'>" + winner + ' wins the battle!</p>';
+        }
+
+        // Function to check if a button contains specific text
+        function containsText(button, text) {
+            return button.innerText.toLowerCase().includes(text.toLowerCase());
+        }
+
+        // Override the contains method for case-insensitive matching
+        HTMLCollection.prototype.contains = function(text) {
+            for (var i = 0; i < this.length; i++) {
+                if (containsText(this[i], text)) {
+                    return true;
+                }
+            }
+            return false;
+        };
+    </script>
+</body>
+</html>
